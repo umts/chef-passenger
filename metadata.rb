@@ -1,0 +1,12 @@
+name             'passenger'
+maintainer       'UMass Transit Service'
+maintainer_email 'transit-it@admin.umass.edu'
+license          'mit'
+description      'Installs/Configures passenger'
+long_description 'Installs/Configures passenger'
+version          '0.1.0'
+
+depends 'httpd', '~> 0.2.12'
+depends 'apt'
+depends 'yum'
+depends 'yum-epel'
