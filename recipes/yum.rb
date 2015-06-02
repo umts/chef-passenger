@@ -25,18 +25,8 @@
 # THE SOFTWARE.
 include_recipe 'yum-epel'
 
-yum_repository 'passenger' do
-  description 'Phusion Passenger'
-  baseurl 'https://oss-binaries.phusionpassenger.com/yum/passenger/el/$releasever/$basearch'
-  gpgkey 'https://packagecloud.io/gpg.key'
-  gpgcheck false
-end
-
-yum_repository 'passenger-source' do
-  description 'Phusion Passenger Sources'
-  baseurl 'https://oss-binaries.phusionpassenger.com/yum/passenger/el/$releasever/SRPMS'
-  gpgkey 'https://packagecloud.io/gpg.key'
-  gpgcheck false
+packagecloud_repo 'phusion/passenger' do
+  type 'rpm'
 end
 
 package 'mod_passenger'

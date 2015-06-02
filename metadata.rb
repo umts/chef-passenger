@@ -7,10 +7,9 @@ long_description 'Installs/Configures passenger'
 version          '0.1.0'
 source_url       'https://github.com/umts/chef-passenger'
 
-depends 'httpd', '~> 0.2.12'
-depends 'apt'
-depends 'yum'
+# depends 'httpd', '~> 0.2.12'
 depends 'yum-epel'
+depends 'packagecloud'
 
 supports 'ubuntu'
 supports 'centos', '>=7.0'

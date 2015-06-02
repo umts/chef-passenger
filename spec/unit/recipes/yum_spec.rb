@@ -33,9 +33,10 @@ describe 'passenger::yum' do
       runner.converge(described_recipe)
     end
 
-    it 'creates the yum repositories' do
-      expect(chef_run).to create_yum_repository('passenger')
-      expect(chef_run).to create_yum_repository('passenger-source')
+    it 'creates a yum repository' do
+      expect(chef_run).to create_packagecloud_repo('phusion/passenger').with(
+        type: 'rpm'
+      )
     end
 
     it 'installs mod_passenger' do

@@ -34,8 +34,8 @@ describe 'passenger::apt' do
     end
 
     it 'creates an apt repository' do
-      expect(chef_run).to add_apt_repository('passenger').with(
-        distribution: 'trusty'
+      expect(chef_run).to create_packagecloud_repo('phusion/passenger').with(
+        type: 'deb'
       )
     end
 

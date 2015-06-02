@@ -23,12 +23,8 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-apt_repository 'passenger' do
-  uri 'https://oss-binaries.phusionpassenger.com/apt/passenger'
-  components ['main']
-  distribution node['lsb']['codename']
-  keyserver 'keyserver.ubuntu.com'
-  key '561F9B9CAC40B2F7'
+packagecloud_repo 'phusion/passenger' do
+  type 'deb'
 end
 
 package 'libapache2-mod-passenger'
